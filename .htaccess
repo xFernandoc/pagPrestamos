@@ -1,0 +1,17 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteRule ^socioslist/([0-9]+)$ socioslist.php?dni=$1
+RewriteRule ^account_pres/([0-9]+)$ account_pres.php?dni=$1
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+
+
+
+ErrorDocument 404 /prestamos/Errores/404.html
